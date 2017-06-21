@@ -9,7 +9,7 @@ import os
 
 class Send_email():
     def __init__(self,send_user="songjianmin@17guagua.com",pwd="qscBnXcQb3p7CF48",
-                 rec_user=["songjianmin@17guagua.com"],
+                 rec_user=["songjianmin@17guagua.com","31780344@qq.com"],
                  title_mail="test",
                  content_mail="test content1",
                  smtp_server = 'smtp.17guagua.com'):
@@ -22,14 +22,19 @@ class Send_email():
 
     def send(self):
 
+        toaddrlist = ''
         msg = MIMEMultipart()
         msg['Subject'] = self.subject
+        msg['From'] = self.user
+        for each in self.rec_user:
+            toaddrlist = each+','+toaddrlist
+        msg['to'] = toaddrlist
 
         # email_content = self.content
         content1 = MIMEText(self.content,"plain",'utf-8')
         msg.attach(content1)
 
-        s = smtplib.SMTP(self.smtp_server)
+        s = smtplib.SMTP(self.smtp_server,25)
         s.login(self.user,self.pwd)
         # for i in range(10):
         s.sendmail(self.user,self.rec_user,msg.as_string())
