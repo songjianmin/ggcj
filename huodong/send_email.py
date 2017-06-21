@@ -7,19 +7,35 @@ from email.mime.multipart import MIMEMultipart
 from email import encoders
 import os
 
-user = "songjianmin@17guagua.com"
-pwd = "qscBnXcQb3p7CF48"
-to = ["liujunchen@17guagua.com"]
-msg = MIMEMultipart()
-msg['Subject'] = "test"
+class Send_email():
+    def __init__(self,send_user="songjianmin@17guagua.com",pwd="qscBnXcQb3p7CF48",
+                 rec_user=["songjianmin@17guagua.com"],
+                 title_mail="test",
+                 content_mail="test content1",
+                 smtp_server = 'smtp.17guagua.com'):
+        self.user = send_user
+        self.pwd = pwd
+        self.rec_user = rec_user
+        self.subject = title_mail
+        self.content = content_mail
+        self.smtp_server = smtp_server
 
-email_content = "test内容"
-content1 = MIMEText(email_content,"plain",'utf-8')
-msg.attach(content1)
+    def send(self):
 
-s = smtplib.SMTP('smtp.17guagua.com')
-s.login(user,pwd)
-for i in range(10):
-    s.sendmail(user,to,msg.as_string())
-print ("send ok!")
-s.close()
+        msg = MIMEMultipart()
+        msg['Subject'] = self.subject
+
+        # email_content = self.content
+        content1 = MIMEText(self.content,"plain",'utf-8')
+        msg.attach(content1)
+
+        s = smtplib.SMTP(self.smtp_server)
+        s.login(self.user,self.pwd)
+        # for i in range(10):
+        s.sendmail(self.user,self.rec_user,msg.as_string())
+        print ("send ok!")
+        s.close()
+
+if __name__ == "__main__":
+    send_email = Send_email()
+    send_email.send()
