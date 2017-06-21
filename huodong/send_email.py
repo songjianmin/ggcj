@@ -34,12 +34,16 @@ class Send_email():
         content1 = MIMEText(self.content,"plain",'utf-8')
         msg.attach(content1)
 
-        s = smtplib.SMTP(self.smtp_server,25)
-        s.login(self.user,self.pwd)
-        # for i in range(10):
-        s.sendmail(self.user,self.rec_user,msg.as_string())
-        print ("send ok!")
-        s.close()
+        try:
+            s = smtplib.SMTP(self.smtp_server,25)
+            s.login(self.user,self.pwd)
+            # for i in range(10):
+            s.sendmail(self.user,self.rec_user,msg.as_string())
+            print ("send ok!")
+            s.close()
+        except Exception as e:
+            print (e,"----")
+            print ("Error:无法发送邮件")
 
 if __name__ == "__main__":
     send_email = Send_email()
