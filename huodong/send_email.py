@@ -7,7 +7,7 @@ from email.mime.multipart import MIMEMultipart
 from email import encoders
 import os
 
-class Send_email():
+class Send_Email():
     def __init__(self,send_user="songjianmin@17guagua.com",pwd="qscBnXcQb3p7CF48",
                  rec_user=["songjianmin@17guagua.com","31780344@qq.com"],
                  title_mail="test",
@@ -45,6 +45,8 @@ class Send_email():
             print (e,"----")
             print ("Error:无法发送邮件")
 
+
+
 if __name__ == "__main__":
-    send_email = Send_email()
+    send_email = Send_Email()
     send_email.send()
