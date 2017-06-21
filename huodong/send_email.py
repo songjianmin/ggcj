@@ -8,15 +8,18 @@ from email import encoders
 import os
 
 user = "songjianmin@17guagua.com"
-pwd = "*()2015Song"
-to = ["songjinamin@17guagua.com","317804344@qq.com"]
+pwd = "qscBnXcQb3p7CF48"
+to = ["liujunchen@17guagua.com"]
 msg = MIMEMultipart()
 msg['Subject'] = "test"
-content1 = MIMEText("正文test","plain",'utf-8')
+
+email_content = "test内容"
+content1 = MIMEText(email_content,"plain",'utf-8')
 msg.attach(content1)
 
-s = smtplib.SMTP('smtp.163.com')
+s = smtplib.SMTP('smtp.17guagua.com')
 s.login(user,pwd)
-s.sendmail(user,to,msg.as_string())
+for i in range(10):
+    s.sendmail(user,to,msg.as_string())
 print ("send ok!")
 s.close()
