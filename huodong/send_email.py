@@ -90,7 +90,37 @@ class Send_Email():
             print(e, "----")
             print("Error:无法发送邮件")
 
+
+    def send_html(self):
+
+        content_html = 'test<br><br><table border="1">' \
+                       '<tr><th>Month</th><th>Savings</th></tr>' \
+                       '<tr><td>January</td><td>$100</td></tr></table>'
+        msg=MIMEMultipart()
+        msg["Subject"]=self.subject
+        msg["From"]=self.user
+        toaddrlist = ""
+        for each in self.rec_user:
+            toaddrlist = each + "," + toaddrlist
+        msg["to"] = toaddrlist
+
+        content = MIMEText(content_html,'html','gb2312')
+        msg.attach(content)
+
+        try:
+            s = smtplib.SMTP(self.smtp_server,25)
+            s.login(self.user,self.pwd)
+            s.sendmail(self.user,self.rec_user,msg.as_string())
+            s.close()
+            print ("send ok")
+        except Exception as e:
+            print (e)
+            print ("send fail !")
+
+
+
 if __name__ == "__main__":
     send_email = Send_Email()
     # send_email.send_text()
-    send_email.send_attch()
+    # send_email.send_attch()
+    send_email.send_html()
