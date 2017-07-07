@@ -9,8 +9,8 @@ import logging
 
 class active_month():
 
-    def __init__(self):
-        pass
+    def __init__(self,url_goal = "http://hd.ggcj.com"):
+        self.url = url_goal
 
     #初始化浏览器
     def chrome_browser(self):
@@ -28,8 +28,8 @@ class active_month():
 
     def open_url(self):
         #打开url
-        url_goal = "http://hd.ggcj.com"
-        self.drive.get(url_goal)
+        # url_goal = "http://hd.ggcj.com"
+        self.drive.get(self.url)
 
     def adjust_browser(self):
         #浏览器最大化
