@@ -27,10 +27,10 @@ class use_mysql():
 
         # print ("数据库查询失败")
         # print (count)\
-        # allrang_list = self.cur.fetchall()
-        # for each in allrang_list:
-        #     print (each)
-        return allrang_list
+        allrang_list = self.cur.fetchall()
+        for each in allrang_list:
+            print (each)
+        # return allrang_list
 
     def close_sql(self):
         self.conn.close()
