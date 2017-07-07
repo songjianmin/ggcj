@@ -40,6 +40,7 @@ class active_month():
         js = "window.open('https://www.baidu.com');"
         self.drive.execute_script(js)
 
+
     def click_logolink(self):
         active_handle = self.drive.current_window_handle
         self.drive.find_element_by_class_name('f_logo').click()
