@@ -15,8 +15,9 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from secondapi import views as secapi_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    # url(r'^firstapp/',)
+    url(r'^secondapi/',secapi_views.Create_Userinfo)
 ]

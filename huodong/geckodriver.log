@@ -1,0 +1,5 @@
+1499655513438	geckodriver	INFO	Listening on 127.0.0.1:63811
+1499655513500	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe with args ["-marionette"]
+1499655518639	Marionette	INFO	Listening on port 63817
+1499655518998	Marionette	WARN	TLS certificate errors will be ignored for this session
+1499655530320	Marionette	INFO	Ceased listening

@@ -111,8 +111,9 @@ if __name__ == "__main__":
     june_active.chrome_browser()
     june_active.open_url()
     june_active.adjust_browser()
+    june_active.exe_jscript()
     june_active.click_logolink()
-    june_active.test_login_page()
-    june_active.test_hd_page()
+    # june_active.test_login_page()
+    # june_active.test_hd_page()
     # june_active.close_browser()
-    # june_active.exe_jscript()
+
