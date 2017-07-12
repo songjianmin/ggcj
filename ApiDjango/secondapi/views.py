@@ -11,6 +11,6 @@ def Create_Userinfo(request):
     return HttpResponse(res)
 
 def home(request):
-    return render(request,'home.html')
+    return render(request,'secondapi/home.html')
 
 

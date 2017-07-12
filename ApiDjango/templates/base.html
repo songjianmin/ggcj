@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}这是默认标题{% endblock %} --haha</title>
+</head>
+<body>
+
+{% include 'nav.html' %}
+
+{% block content %}
+<div>这里是默认的东西，所有继承自这个模板的，如果不覆盖就显示这里的默认内容。</div>
+{% endblock %}
+
+</body>
+</html>
