@@ -10,4 +10,7 @@ def Create_Userinfo(request):
     res=userinfo.objects.filter(id=3)  #select sql
     return HttpResponse(res)
 
+def home(request):
+    return render(request,'home.html')
+
 

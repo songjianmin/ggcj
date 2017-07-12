@@ -19,5 +19,6 @@ from secondapi import views as secapi_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^secondapi/',secapi_views.Create_Userinfo)
+    url(r'^secondapi/',secapi_views.Create_Userinfo,name="secondapi"),
+    url(r'^home/',secapi_views.home,name="home")
 ]

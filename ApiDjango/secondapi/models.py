@@ -11,6 +11,9 @@ class userinfo(models.Model):
     test_id = models.IntegerField()
     test_name = models.CharField(max_length=80)
 
+    def __str__(self):
+        return self.test_name
+
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     ser_id = models.AutoField(primary_key=True)
     ser_test = models.CharField(max_length=80)
