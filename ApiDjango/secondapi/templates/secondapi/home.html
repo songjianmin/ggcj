@@ -2,7 +2,30 @@
 
 {% block title %}欢迎光临这里{% endblock %}
 
+
 {% block content %}
 
 this is firstpage
+
+{{ string }}
+
+{% for i in list %}
+{{i}}
+{% endfor %}
+
+{{ dict.site }}:{{dict.content}}
+
+{% for item in iflist %}
+{{ item }}{% if not forloop.last %},{% endif %}
+{% endfor %}
+
+{% url 'home' %}
+
+{{ request.user }}
+{{ request.user }}
+{{ request.path }}
+{{ request.GET.urlencode }}
+
+<a href="{{ request.path }}?{{ request.GET.urlencode }}&delete=1">当前网址加参数 delete</a>
+
 {% endblock %}
