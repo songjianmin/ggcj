@@ -1,8 +1,12 @@
 from django.db import models
 import os
+os.environ.setdefault("DJANGO_SETTINGS_MODULE","ApiDjango.settings")
 from rest_framework import serializers
 
-os.environ.update({"DJANGO_SETTINGS_MODULE": "ApiDjango.settings"})
+# import django
+# if django.VERSION >= (1,7):
+#     django.setup()
+
 
 # Create your models here.
 
