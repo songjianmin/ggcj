@@ -12,7 +12,6 @@ from rest_framework import serializers
 
 class userinfo(models.Model):
     id = models.AutoField(primary_key=True)
-    test_id = models.IntegerField()
     test_name = models.CharField(max_length=80)
 
     def __str__(self):

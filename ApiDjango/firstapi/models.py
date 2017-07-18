@@ -19,5 +19,8 @@ class userinfo(models.Model):
     user_id = models.IntegerField()
     user_name = models.CharField(max_length=80)
 
+    def __str__(self):
+        return self.user_name
+
 # if __name__=="__main__":
 #     userinfo.objects.create(user_id=103,user_name="www")
