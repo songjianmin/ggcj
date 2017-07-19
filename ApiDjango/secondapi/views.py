@@ -35,9 +35,23 @@ def home(request):
     # return render(request, 'secondapi/home.html', {'dict': info_dict})
     return render(request, 'secondapi/home.html', {'iflist': iflist})
 
+from .forms import AddForm
 def index(request):
 
-    return render(request,'secondapi/index.html')
+    # return render(request,'secondapi/index.html') #简单获取html页面中内容
+
+    #使用django表单forms.py
+    if request.method == "POST":
+        form = AddForm(request.POST)
+        if form.is_valid():
+            a = form.cleaned_data['a']
+            b = form.cleaned_data['b']
+            return HttpResponse(str(int(a)+int(b)))
+    else:
+        form = AddForm()
+    return render(request,'secondapi/index1.html',{'form':form})
+
+
 
 def add(request):
     a = request.GET['a']
