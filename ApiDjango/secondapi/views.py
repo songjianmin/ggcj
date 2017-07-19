@@ -34,3 +34,12 @@ def home(request):
     # return render(request, 'secondapi/home.html', {'list': forlist})
     # return render(request, 'secondapi/home.html', {'dict': info_dict})
     return render(request, 'secondapi/home.html', {'iflist': iflist})
+
+def index(request):
+
+    return render(request,'secondapi/index.html')
+
+def add(request):
+    a = request.GET['a']
+    b = request.GET['b']
+    return HttpResponse(str(int(a)+int(b)))

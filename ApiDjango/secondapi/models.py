@@ -62,4 +62,3 @@ class Person(models.Model):
 
     full_name = property(my_property)   # @property 可以将python定义的函数“当做”属性访问，从而提供更加友好访问方式
 
-    

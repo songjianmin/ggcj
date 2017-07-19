@@ -15,10 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from secondapi import views as secapi_views
+from secondapi import views as secondapi_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^secondapi/',secapi_views.Create_Userinfo,name="secondapi"),
-    url(r'^home123/',secapi_views.home,name="home")
+    url(r'^secondapi/',secondapi_views.Create_Userinfo,name="secondapi"),
+    url(r'^home123/',secondapi_views.home,name="home"),
+    url(r'^index/',secondapi_views.index,name="index"),
+    url(r'^add/',secondapi_views.add,name="add"),
 ]
