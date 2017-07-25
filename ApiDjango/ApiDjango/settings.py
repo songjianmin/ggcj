@@ -129,6 +129,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+#执行queryset时显示对应的sql语句
 LOGGING = {
     'version':1,
     'disable_existing_loggers':False,
