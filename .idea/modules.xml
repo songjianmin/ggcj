@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../spider/firstscrapy/.idea/firstscrapy.iml" filepath="$PROJECT_DIR$/../../spider/firstscrapy/.idea/firstscrapy.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/ggcj.iml" filepath="$PROJECT_DIR$/.idea/ggcj.iml" />
     </modules>
   </component>
